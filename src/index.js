@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar'
+import VideoList from './components/video_list';
+import VideoDetail from  './components/video_detail'
 const API_KEY = 'AIzaSyBi463TfHx9e9W6yQFByst6_q-8IJCA6D0';
 
 // components are snippets of code that produce html
@@ -19,11 +21,13 @@ class App extends Component {
   }
 
   render() {
-  return (
-    <div>
-      <SearchBar />
-    </div>
-    );
+    return (
+      <div>
+        <SearchBar />
+        <VideoDetail video={this.state.videos[0]} />
+        <VideoList videos={this.state.videos} />
+      </div>
+      );
   }
 }
 
